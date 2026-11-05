@@ -1,24 +1,4 @@
-:root {
-  /* Background colors */
-  --bg-primary: #0b0d0e;
-  --bg-secondary: #141819;
-  --bg-card: #191e1d;
 
-  /* Accent color */
-  --accent: #c5f467;
-
-  /* Text colors */
-  --text-primary: #f2f4f0;
-  --text-secondary: #89918d;
-
-  /* Borders */
-  --border: #29302d;
-
-  /* Layout */
-  --container-width: 1200px;
-  --section-spacing: 100px;
-  --card-radius: 16px;
-}
 
 body {
   color: white;
@@ -74,7 +54,7 @@ body {
   align-items: center;
   padding: 10rem;
   border-bottom: 2px solid rgb(65, 41, 41);
-  height: 60vh;
+  
 }
 
 .homeContainer .introContainer {
@@ -89,6 +69,11 @@ body {
   width: auto;
   border-radius: 50%;
   border: 2px solid limegreen;
+  transition: all 0.5s ease;
+}
+
+.homeContainer .introContainer .imageContainer img:hover{
+    content: url(/assets/images/debugProfile.png);
 }
 
 .homeContainer .introContainer .nameRoleContainer .name,
@@ -103,7 +88,7 @@ body {
 }
 
 .aboutMe {
-  width: 40rem;
+  width: clamp(20rem, 70%, 40rem);
   justify-self: center;
   padding: 3rem;
   margin-top: 2rem;
@@ -129,9 +114,10 @@ body {
 
 .skillsContainer .toolsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: 4rem;
-  align-items: stretch;
+
 }
 
 .skillsContainer .toolsContainer .toolsCard {
@@ -169,7 +155,7 @@ body {
 
 .projectsContainer .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   gap: 2rem;
   width: 100%;
   max-width: 1100px;
@@ -480,8 +466,22 @@ body {
     flex-direction: column;
   }
 
-  .skillsContainer .toolsContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  
+
+  .contactContainer .contactCollabContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  .footerContainer p{
+    padding: 0;
+    margin: 0;
   }
 }
