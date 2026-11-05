@@ -54,7 +54,7 @@ body {
   align-items: center;
   padding: 10rem;
   border-bottom: 2px solid rgb(65, 41, 41);
-  
+  width: clamp(10rem, 50%, 40rem);
 }
 
 .homeContainer .introContainer {
